@@ -83,6 +83,12 @@ namespace CodeMonkey {
                 }
             }
         }
+
+        internal static void Create(object destroySelf, float gridMoveTimerMax)
+        {
+            throw new NotImplementedException();
+        }
+
         public static void StopFirstTimerWithName(string functionName) {
             for (int i = 0; i < timerList.Count; i++) {
                 if (timerList[i].functionName == functionName) {

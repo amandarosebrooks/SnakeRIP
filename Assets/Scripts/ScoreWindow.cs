@@ -13,19 +13,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class GameAssets : MonoBehaviour
+public class ScoreWindow : MonoBehaviour
 {
 
-    public static GameAssets i;
+    private Text scoreText;
 
     private void Awake()
     {
-        i = this;
+        scoreText = transform.Find("scoreText").GetComponent<Text>();
     }
-    
-    public Sprite snakeHeadSprite;
-    public Sprite snakeBodySprite;
-    public Sprite foodSprite;
 
+    private void Update()
+    {
+        scoreText.text = GameHandler.GetScore().ToString();
+    }
 }
