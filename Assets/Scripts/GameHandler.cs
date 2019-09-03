@@ -17,6 +17,7 @@ public class GameHandler : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        InitlializeStatic();
     }
     private void Start()
     {
@@ -26,6 +27,13 @@ public class GameHandler : MonoBehaviour
 
         snake.Setup(levelGrid);
         levelGrid.Setup(snake);
+
+        CMDebug.ButtonUI(Vector2.zero, "´Reload Scene", () => { Loader.Load(Loader.Scene.Gamescene); });
+    }
+
+    private static void InitlializeStatic()
+    {
+        score = 0;
     }
 
     public static int GetScore()

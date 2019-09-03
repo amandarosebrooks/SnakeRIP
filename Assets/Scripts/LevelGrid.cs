@@ -34,6 +34,12 @@ public class LevelGrid
     {
         this.snake = snake;
 
+        for (int i=0; i < 50000; i++)
+        {
+            foodGameObject = new GameObject("Food", typeof(SpriteRenderer));
+            foodGameObject.GetComponent<SpriteRenderer>().sprite = GameAssets.i.foodSprite;
+        }
+
         SpawnFood();
     }
 
