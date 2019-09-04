@@ -6,17 +6,19 @@ using UnityEngine.SceneManagement;
 
 public static class Loader
 {
+
     public enum Scene
     {
-        Gamescene,
+        GameScene,
         Loading,
     }
+
     private static Action loaderCallbackAction;
 
-   public static void Load(Scene scene)
+    public static void Load(Scene scene)
     {
-        // Set tp the callback action that will be triggered after the Loading scene is loaded
-        loaderCallbackAction = () =>
+        // Set up the callback action that will be triggered after the Loading scene is loaded
+        loaderCallbackAction = () => 
         {
             // Load target scene when the Loading scene is loaded
             SceneManager.LoadScene(scene.ToString());
@@ -25,6 +27,7 @@ public static class Loader
         // Load loading scene
         SceneManager.LoadScene(Scene.Loading.ToString());
     }
+
     public static void LoaderCallback()
     {
         if (loaderCallbackAction != null)
@@ -33,6 +36,5 @@ public static class Loader
             loaderCallbackAction = null;
         }
     }
-}
-    
 
+}

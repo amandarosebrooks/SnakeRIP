@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoaderCallBack : MonoBehaviour
+/*
+ * Works alongside the Loader class to notify it when the current level has updated the screen
+ * */
+public class LoaderCallback : MonoBehaviour
 {
+
     private bool firstUpdate = true;
 
     private void Update()
